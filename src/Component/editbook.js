@@ -41,7 +41,7 @@ export default function Navbar () {
               className="!absolute right-1 top-1 rounded text-black bg-white pr-13 pl-2 py-1"
               
             >
-              Search
+              Searchh
             </button>
             </div>
         <div className="ml-auto flex gap-1 md:mr-4 px-5 py-2 ">
