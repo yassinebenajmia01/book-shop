@@ -50,7 +50,7 @@ export default function Navbar() {
             <button variant="text" color="white" className='bg-slate-600 px-3 py-1' >
               login
             </button>
-            <button variant="text" color="white" className="bg-rose-600 px-3 py-1">sign out
+            <button variant="text" color="white" className="bg-rose-600 px-3 py-1">sign outt
               
             </button>
           </div>
