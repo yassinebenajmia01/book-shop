@@ -1,13 +1,14 @@
 import React from 'react'
 
 
-export default function Bookshow() {
+export default function Bookshow({title,price,genre,author,description,img}) {
 
   return (
+    <>
     <div className="w-96  h-[54%] flex-shrink-0  rounded border border-black mt-4 mr-4 ml-4 " >
       <div shadow={false} floated={false} className="h-96">
         <img
-          src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+          src={img}
           alt="card-image"
           className="h-full w-full object-cover "
           
@@ -16,8 +17,9 @@ export default function Bookshow() {
       </div>
       <div className="mb-2 flex items-center justify-between">
           <p color="blue-gray" className="font-medium">
-            Apple AirPods
+          {title}
           </p>
+          
       </div>
       <div>
         
@@ -26,21 +28,20 @@ export default function Bookshow() {
           color="gray"
           className="font-normal opacity-75"
         >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
+          {description}
         </p>
       </div>
       <div>
       
           <p color="blue-gray" className="font-medium text-right">
-            $95.00
+            {price}$
           </p>
       </div>
      
     </div>
 
 
-
+  </>
   )
 }
 

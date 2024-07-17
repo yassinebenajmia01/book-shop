@@ -1,6 +1,6 @@
-import { BellIcon, Cog6ToothIcon } from '@material-tailwind/react';
+
 import React from 'react';
-import { LoginIcon, SignInIcon } from '@material-tailwind/react'; 
+
 import Logo from './logoo.png'
 
 
@@ -19,7 +19,7 @@ export default function Navbar() {
             variant="h6"
             className="mr-4 ml-2 cursor-pointer py-1.5"
           >
-            <img src={Logo} className='h-12 w-13'>
+            <img src={Logo} alt='logo' className='h-12 w-13'>
             </img>
         
           </div>
