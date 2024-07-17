@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BookListt from './Promotion'; // Ensure the correct import path
-import { images } from './Db/pdb'; // Ensure the correct import path
+import BookListt from './Promotion'; 
+import { images } from './Db/pdb'; 
 
 const styles = {
     scrollContainer: {
@@ -12,7 +12,7 @@ const styles = {
         position: 'relative'
     },
     imageWrapper: {
-        minWidth: '100%', // Ensure one image at a time
+        minWidth: '100%', 
         transition: 'transform 0.5s ease',
     },
     buttonsContainer: {
