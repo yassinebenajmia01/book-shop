@@ -1,11 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import DetailsBook from './DetailsBook';
 
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+
+    padding: '0',
+    height:"800px",
+    width:"1200px",
+
+
+    transform: 'translate(-50%, -50%)',
+  }
+}
 export default function Bookshow({title,price,genre,author,description,img}) {
 
-  return (
-    <>
-    <div className="w-96  h-[54%] flex-shrink-0  rounded border border-black mt-4 mr-4 ml-4 " >
+ 
+  
+  const [modalIsOpen, setIsOpen] = useState(false);
+  
+
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  
+
+        return (
+          
+          <>
+             <Modal className={''}
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+       
+       
+                style={customStyles}
+                >
+     
+        <DetailsBook
+        
+                            img={img}
+                            title={title}
+                            price={price}
+                            genre={genre}
+                            author={author}
+                            description={description}
+                            />
+                          
+                
+                            
+                            
+                        
+
+      
+      </Modal>
+              
+
+ 
+
+    <div className="w-100  h-[65%] flex-shrink-0  rounded border border-black mt-4 mr-4 ml-4 " >
       <div shadow={false} floated={false} className="h-96">
         <img
           src={img}
@@ -31,6 +90,14 @@ export default function Bookshow({title,price,genre,author,description,img}) {
           {description}
         </p>
       </div>
+      <button
+                ripple={false}
+                fullWidth={true}
+                className="bg-blue-500  shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100  border-blue-gray-500 text-blue-gray-500 rounded px-3 py-1 mt-1 ml-1 "
+                onClick={openModal}
+              >
+                Add to Cart
+              </button>
       <div>
       
           <p color="blue-gray" className="font-medium text-right">
@@ -39,10 +106,12 @@ export default function Bookshow({title,price,genre,author,description,img}) {
       </div>
      
     </div>
+    
 
 
   </>
   )
 }
+
 
 

@@ -3,9 +3,8 @@ import Bookshow from '../Component/Bookshow'
 import { books } from '../Component/Db/db'
 
 function Listbook() {
-  
   return (
-    <div >
+    <div className='grid grid-cols-3'  >
 
         {books.map((book, index) => (
       <div  key={index}>
@@ -28,6 +27,7 @@ function Listbook() {
   </div>
   )
 }
+
 
 
 export default Listbook
