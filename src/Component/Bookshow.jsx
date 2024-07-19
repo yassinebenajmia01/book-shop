@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import DetailsBook from './DetailsBook';
 
 
+
 const customStyles = {
   content: {
     top: '50%',
@@ -11,6 +12,7 @@ const customStyles = {
     padding: '0',
     height:"800px",
     width:"1200px",
+     
 
 
     transform: 'translate(-50%, -50%)',

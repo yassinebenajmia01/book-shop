@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BookListt from './Promotion'; 
+import BookListt from '../pages/Promotion'; 
 import { images } from './Db/pdb'; 
 
 const styles = {

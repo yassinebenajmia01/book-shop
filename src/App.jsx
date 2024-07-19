@@ -1,8 +1,7 @@
 
 import Navbar from "./Component/Navbar";
-import Scroll from "./Component/scroll";
-
-import Listbook from "./pages/listbook";
+import Login from "./pages/login";
+import SignUp from "./pages/sign";
 
 
 
@@ -12,8 +11,10 @@ function App() {
    <>
       
         <Navbar/>
-        <Scroll/>
-        <Listbook/>
+        {/* <Scroll/>
+        <Listbook/> */}
+        {<Login/>}
+        <SignUp/>
         
 
    </>
