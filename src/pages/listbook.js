@@ -4,7 +4,7 @@ import { books } from '../Component/Db/db'
 
 function Listbook() {
   return (
-    <div className='grid grid-cols-3'  >
+    <div className='grid grid-cols-3 grid-rows-2'  >
 
         {books.map((book, index) => (
       <div  key={index}>

@@ -1,7 +1,12 @@
 
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Navbar from "./Component/Navbar";
-import Login from "./pages/login";
+import Scroll from "./Component/scroll";
+import Listbook from "./pages/listbook";
 import SignUp from "./pages/sign";
+import Login from "./pages/login";
+import Promotion from "./pages/Promotion";
+
 
 
 
@@ -9,12 +14,20 @@ import SignUp from "./pages/sign";
 function App() {
   return (
    <>
-      
-        <Navbar/>
-        {/* <Scroll/>
-        <Listbook/> */}
-        {<Login/>}
-        <SignUp/>
+        <BrowserRouter>
+        <Routes >
+        <Route index element ={<><Navbar/><Promotion/></>}/>
+        
+        <Route path="/Signup" element ={<SignUp/>}></Route>
+        <Route path="/Login" element ={<Login/>}></Route>
+        </Routes>
+        </BrowserRouter>
+        
+        
+        
+        <Scroll/>
+        <Listbook/>
+        
         
 
    </>

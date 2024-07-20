@@ -2,9 +2,10 @@
 import React from 'react';
 
 import Logo from './logoo.png'
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+  const navigate=useNavigate()
   return (
     <>
       <div
@@ -47,10 +48,10 @@ export default function Navbar() {
             </button>
           </div>
           <div className="ml-auto flex gap-1 md:mr-4 px-5 py-2">
-            <button variant="text" color="white" className='bg-slate-600 px-3 py-1' >
+            <button variant="text" color="white" className='bg-slate-600 px-3 py-1' onClick={()=>navigate("/Login")} >
               Login
             </button>
-            <button variant="text" color="white" className="bg-rose-600 px-3 py-1">Sign Out
+            <button variant="text" color="white" className="bg-rose-600 px-3 py-1" onClick={()=>navigate("/Signup")}>Sign Out
               
             </button>
           </div>
