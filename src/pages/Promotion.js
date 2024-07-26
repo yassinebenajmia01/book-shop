@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Bookshow from '../Component/Bookshow';
 
 const calculateDiscountPercentage = (originalPrice, salePrice) => {
     const discount = originalPrice - salePrice;
@@ -66,8 +67,8 @@ const styles = {
 
 const BookListt = ({ url, originalPrice, salePrice }) => {
     const discountPercentage = calculateDiscountPercentage(originalPrice, salePrice);
-
     return (
+        <div>
         <div style={styles.galleryContainer} className='mt-7'>
             <div style={styles.imageContainer}>
                 <img src={url} alt={`erreur`} style={styles.image} />
@@ -80,6 +81,16 @@ const BookListt = ({ url, originalPrice, salePrice }) => {
                 </div>
             </div>
         </div>
+        
+
+
+
+
+
+
+
+</div>
+
     );
 };
 

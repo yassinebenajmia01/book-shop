@@ -1,10 +1,22 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Logo from './logoo.png'
 import { useNavigate } from 'react-router-dom';
+import { getBooks } from '../api/api';
+;
+
 
 export default function Navbar() {
+  useEffect(()=>{
+    const getBook=async()=>{
+      try{
+      const response=await getBooks()
+      return response.data
+    }catch(e){console.error("erreur",e)}
+    }
+    getBook()
+  },[])
   const navigate=useNavigate()
   return (
     <>

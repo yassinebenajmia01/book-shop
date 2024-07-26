@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BookListt from '../pages/Promotion'; 
 import { images } from './Db/pdb'; 
+import { getBooks } from '../api/api';
 
 const styles = {
     scrollContainer: {
@@ -46,8 +47,21 @@ function Scroll() {
     const nextImage = () => {
         setCurrentIndex((prevIndex) => (prevIndex < images.length - 1 ? prevIndex + 1 : 0));
     };
+    const[book,Setbook]=useState([])
+  useEffect(()=>{
+    const Book=async()=>{
+      try{
+      const reponse= await getBooks()
+      console.log("first",reponse)
+      await Setbook(reponse)
+      return reponse
+    }catch(e){console.error("erreur",e)}
+    }
+    Book()
+  },[])
 
     return (
+        <>
         <div style={styles.scrollContainer}>
             <div
                 style={{
@@ -55,12 +69,12 @@ function Scroll() {
                     transform: `translateX(-${currentIndex * 100}%)`
                 }}
             >
-                {images.map((image, index) => (
+                {book.map((booke, index) => (
                     <div style={styles.imageWrapper} key={index}>
                         <BookListt
-                            url={image.url}
-                            originalPrice={image.originalPrice}
-                            salePrice={image.salePrice}
+                            url={booke.avatar}
+                            originalPrice={booke.originalPrice}
+                            salePrice={booke.salePrice}
                         />
                     </div>
                 ))}
@@ -70,6 +84,8 @@ function Scroll() {
                 <button style={styles.navButton} onClick={nextImage}>⟩</button>
             </div>
         </div>
+        </>
+        
     );
 }
 
