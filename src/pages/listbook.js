@@ -2,20 +2,11 @@ import React, { useState } from 'react'
 import Bookshow from '../Component/Bookshow'
 import { getStory } from '../api/api'
 import{ useEffect } from 'react';
+import { useApi } from '../context/apiContext';
 
 function Listbook() {
-  const[stories,Setstory]=useState([])
-  useEffect(()=>{
-    const Story=async()=>{
-      try{
-      const response= await getStory()
-      console.log("first",response)
-      Setstory(response)
-      return response
-    }catch(e){console.error("erreur",e)}
-    }
-    Story()
-  },[])
+ const { book, stories }=  useApi()
+ console.log("sss",stories)
   return (
     <div className='grid grid-cols-3 grid-rows-2'  >
 

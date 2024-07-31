@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa';
 
 const Login = () => {
+  const {user,login} = useauth()
   return (
     <div className="flex h-screen">
       <div

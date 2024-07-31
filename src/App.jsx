@@ -11,9 +11,11 @@ import Promotion from "./pages/Promotion";
 
 
 
+
 function App() {
   return (
    <>
+        
         <BrowserRouter>
         <Routes >
         <Route index element ={<><Navbar/><Promotion/></>}/>
@@ -27,6 +29,7 @@ function App() {
         
         <Scroll/>
         <Listbook/>
+        
         
         
 
