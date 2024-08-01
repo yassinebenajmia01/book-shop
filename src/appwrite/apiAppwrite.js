@@ -19,6 +19,6 @@ return res
 
 
 export const signUp = async (email, password,phone) => {
-  const res2 = await account.create(em, pass,phone);
+  const res2 = await account.create(email, password,phone);
   return res2;
 }

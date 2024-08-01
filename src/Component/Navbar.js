@@ -60,7 +60,7 @@ export default function Navbar() {
             </button>
           </div>
           <div className="ml-auto flex gap-1 md:mr-4 px-5 py-2">
-            <button variant="text" color="white" className='bg-slate-600 px-3 py-1' onClick={()=>navigate("/Login")} >
+            <button variant="text" color="white" className='bg-slate-600 px-3 py-1' onClick={()=>navigate("/Login2")} >
               Login
             </button>
             <button variant="text" color="white" className="bg-rose-600 px-3 py-1" onClick={()=>navigate("/Signup")}>Sign Out

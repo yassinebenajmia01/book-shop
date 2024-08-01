@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
-  const {user,login} = useauth()
+  const navigate=useNavigate()
   return (
     <div className="flex h-screen">
       <div
@@ -56,7 +58,7 @@ const Login = () => {
 
           <div className="flex items-center justify-between mb-6">
             <a href="#" className="text-black">Don’t have an account?</a>
-            <button className="text-blue-500 py-2 px-4 rounded font-bold">Sign up</button>
+            <button className="text-blue-500 py-2 px-4 rounded font-bold" onClick={()=>navigate("/Signup")}>Sign up</button>
           </div>
           
         </div>

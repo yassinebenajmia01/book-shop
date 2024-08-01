@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaBars, FaPhone, FaEnvelope, FaUser } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 
 const SignUp = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const navigate=useNavigate()
 
     return (
         <div className="flex h-screen">
@@ -83,7 +86,7 @@ const SignUp = () => {
                     <hr className="my-5" />
                     <div className="flex items-center justify-between mb-6">
                         <a href="#" className="text-black">Already have an account</a>
-                        <button className="text-blue-500 py-2 px-4 rounded font-bold">Login to your account</button>
+                        <button className="text-blue-500 py-2 px-4 rounded font-bold" onClick={()=>navigate("/login")}>Login to your account</button>
                     </div>
                 </div>
             </div>

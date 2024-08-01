@@ -6,6 +6,7 @@ import Listbook from "./pages/listbook";
 import SignUp from "./pages/sign";
 import Login from "./pages/login";
 import Promotion from "./pages/Promotion";
+import Loginn from "./pages/login2";
 
 
 
@@ -22,6 +23,7 @@ function App() {
         
         <Route path="/Signup" element ={<SignUp/>}></Route>
         <Route path="/Login" element ={<Login/>}></Route>
+        <Route path="/Login2" element ={<Loginn/>}></Route>
         </Routes>
         </BrowserRouter>
         
