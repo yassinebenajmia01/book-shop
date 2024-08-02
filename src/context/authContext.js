@@ -19,9 +19,10 @@ export const AuthProvider = ({ children }) => {
         console.error("error", e);
       }
     };
-    const signup = async (email, password,phonenbr) => {
+    const signup = async (name, email,phone,password) => {
       try {
-          const response = await signUp(email, password,phonenbr);
+        console.log("first",email)
+          const response = await signUp(name, email,phone,password);
          await setUser(response)
 
           return response;

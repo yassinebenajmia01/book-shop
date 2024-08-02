@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaInstagram, FaTwitter, FaBars, FaPhone, FaEnvelope, FaUser } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaBars, FaPhone, FaEnvelope, FaUser,FaLock } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authContext';
 
 
 const SignUp = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    const navigate=useNavigate()
+    const [password, setPassword] = useState('');
 
+    const {signup} = useAuth()
+    const navigate=useNavigate()
+    const handleSignup=async()=>{
+        try{ console.log("first",email)
+            await signup(name,phone,email,password)
+        }catch(e){
+            console.log('u',e)
+        }
+    }
     return (
         <div className="flex h-screen">
             <div
@@ -78,10 +88,26 @@ const SignUp = () => {
                             />
                             <label className={`absolute left-10 transform transition-all duration-300 ${email ? '-translate-y-6 text-sm' : 'translate-y-0 text-base text-gray-500'}`}>E-mail</label>
                         </div>
+                        <div className="mb-6 relative">
+                        <div className="flex items-center p-4 border rounded relative transition-all duration-300 border-gray-300 focus-within:border-blue-600 focus-within:shadow-outline-blue mt-5">
+                            <FaLock className="text-gray-500 mr-4" />
+                            <input
+                                type="password"
+                                placeholder=" "
+                                className="w-full border-none outline-none"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <label className={`absolute left-10 transform transition-all duration-300 ${password ? '-translate-y-6 text-sm' : 'translate-y-0 text-base text-gray-500'}`}>Password</label>
+                        </div>
                     </div>
+
+                    </div>
+
                     <div className="flex items-center justify-between mb-6">
                         <a href="#" className="text-black"></a>
-                        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-[125px] h-[50px]">Next &gt;</button>
+
+                        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-[125px] h-[50px]" onClick={handleSignup}>Next &gt;</button>
                     </div>
                     <hr className="my-5" />
                     <div className="flex items-center justify-between mb-6">
