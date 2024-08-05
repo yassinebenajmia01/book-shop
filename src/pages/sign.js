@@ -14,7 +14,7 @@ const SignUp = () => {
     const navigate=useNavigate()
     const handleSignup=async()=>{
         try{ console.log("first",email)
-            await signup(name,phone,email,password)
+            await signup(email,password)
         }catch(e){
             console.log('u',e)
         }

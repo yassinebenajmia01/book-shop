@@ -1,6 +1,6 @@
 import React from 'react'
-import { Login, signUp } from "../appwrite/apiAppwrite";
 import {  createContext, useContext, useEffect, useState } from "react";
+import {  Login, signUp } from '../appwrite/firebase';
 
 
 export const authContext = createContext();
@@ -19,10 +19,10 @@ export const AuthProvider = ({ children }) => {
         console.error("error", e);
       }
     };
-    const signup = async (name, email,phone,password) => {
+    const signup = async (email,password) => {
       try {
         console.log("first",email)
-          const response = await signUp(name, email,phone,password);
+          const response = await signUp(email,password);
          await setUser(response)
 
           return response;

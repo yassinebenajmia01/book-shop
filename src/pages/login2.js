@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaBars, FaPhone, FaEnvelope, FaUser,FaLock } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authContext';
 const Loginn = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const Navigate=useNavigate()
+    const {Logins} = useAuth()
+    const handleLogin=async()=>{
+        try{ console.log("first",username)
+            await Logins(username,password)
+        }catch(e){
+            console.log('u',e)
+        }
+    }
 
     return (
         <div className="flex h-screen">
@@ -64,7 +73,7 @@ const Loginn = () => {
                 </div>
                 <div className="flex items-center justify-between mb-6">
                     <a className="text-black"></a>
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-[125px] h-[50px]">Next &gt;</button>
+                    <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-[125px] h-[50px]" onClick={handleLogin}>Next &gt;</button>
                 </div>
                 <hr className="my-5" />
                 <div className="flex items-center justify-between mb-6">
